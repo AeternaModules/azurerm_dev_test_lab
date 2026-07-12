@@ -1,3 +1,7 @@
+output "dev_test_labs_id" {
+  description = "Map of id values across all dev_test_labs, keyed the same as var.dev_test_labs"
+  value       = { for k, v in azurerm_dev_test_lab.dev_test_labs : k => v.id }
+}
 output "dev_test_labs_artifacts_storage_account_id" {
   description = "Map of artifacts_storage_account_id values across all dev_test_labs, keyed the same as var.dev_test_labs"
   value       = { for k, v in azurerm_dev_test_lab.dev_test_labs : k => v.artifacts_storage_account_id }
